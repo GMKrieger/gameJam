@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+
+    public void showSmartphone()
+    {
+        GameObject eyecon = GameObject.Find("Eyecon");
+        GameObject cellphone = GameObject.Find("Cellphone");
+        eyecon.gameObject.SetActive(false);
+        Animator anim = cellphone.gameObject.GetComponent<Animator>();
+        anim.SetBool("moveCellphone", true);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
