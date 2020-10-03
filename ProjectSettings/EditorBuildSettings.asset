@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cellphone.unity
     guid: a1463b88ab76bab42b051d0b02cc4253
+  - enabled: 0
+    path: 
+    guid: 8b2a9ad23e9e4a24daad984645851a90
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 2d4a28abb04cd654f846628697fbd872
   m_configObjects: {}

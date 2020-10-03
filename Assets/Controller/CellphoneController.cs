@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Threading;
+
 
 public class CellphoneController : MonoBehaviour
 {
@@ -12,6 +15,10 @@ public class CellphoneController : MonoBehaviour
         eyecon.gameObject.SetActive(false);
         Animator anim = cellphone.gameObject.GetComponent<Animator>();
         anim.SetBool("moveCellphone", true);
+    }
+
+    public void changeScene() {
+        SceneManager.LoadScene("Game");
     }
 
     // Start is called before the first frame update
