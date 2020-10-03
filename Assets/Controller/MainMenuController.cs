@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
 
     public void playGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Cellphone");
     }
 
     public void about()
