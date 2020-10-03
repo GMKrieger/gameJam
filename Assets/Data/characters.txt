@@ -1,0 +1,32 @@
+1;Filtro de Barro;descricao
+1;Prato de Vidro Marrom;descricao
+1;Vidro Vermelho de Banheiro de Vó;descricao
+1;Copo de Requeijão;descricao
+1;Térmica de Café;descricao
+1;Óculos Colorido chavoso;descricao
+1;Farofa Yoki;descricao
+1;Ímã de Geladeira disk Gás;descricao
+1;Coxinha;descricao
+1;Copo Americano;descricao
+2;Vira Lata Caramelo (♂);descricao
+2;Lobo guará (♀);descricao
+2;Crocodilo Papo-amarelo (♂);descricao
+2;Mico Leão Dourado ;descricao
+2;Arara Azul;descricao
+2;Capivara;descricao
+2;Onça-Pintada;descricao
+2;Boto Cor-de-Rosa;descricao
+2;Sucuri;descricao
+2;Tamanduá Bandeira;descricao
+3;Cristo Redentor;descricao
+3;Cataratas do Iguaçu;descricao
+3;Parque do Ibirapuera;descricao
+3;Gruta da Lagoa Azul;descricao
+3;Floresta amazônica;descricao
+3;Centro Histórico de Salvador;descricao
+4;Sudeste;descricao
+4;Norte;descricao
+4;Nordeste;descricao
+4;Centro-Oeste;descricao
+4;Sul;descricao
+5;Brasil;descricao
