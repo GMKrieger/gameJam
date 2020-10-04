@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +25,15 @@ public class GameController : MonoBehaviour
         oneRoll.color = c;
 
         text.text = "100";
+    }
+
+
+    public void roll1Gacha() {
+        GameObject textGO = GameObject.Find("TicketNumber");
+        text = textGO.GetComponent<Text>();
+        int oldTicket = Int16.Parse(text.text);
+        oldTicket = oldTicket - 1;
+        text.text = oldTicket.ToString();
     }
 
     // Start is called before the first frame update
