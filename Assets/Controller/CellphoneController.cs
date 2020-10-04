@@ -8,6 +8,8 @@ using System.Threading;
 public class CellphoneController : MonoBehaviour
 {
 
+    public float timeLeft = 15.0f;
+
     public void showSmartphone()
     {
         GameObject eyecon = GameObject.Find("Eyecon");
@@ -30,6 +32,10 @@ public class CellphoneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0)
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }
