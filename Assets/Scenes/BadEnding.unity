@@ -295,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -247, y: -164}
-  m_SizeDelta: {x: 543.1006, y: 221.50835}
+  m_AnchoredPosition: {x: -221, y: -161}
+  m_SizeDelta: {x: 543.1006, y: 250.00398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177406521
 MonoBehaviour:
@@ -350,7 +350,11 @@ MonoBehaviour:
     LITERALLY, YOU MORON
 
 
-    YOUR WAIFUS ARE JUST PNGS'
+    YOUR WAIFUS ARE JUST PNGS
+
+
+    GET A LIFE YOU FUCKING
+    WEEB'
 --- !u!222 &1177406522
 CanvasRenderer:
   m_ObjectHideFlags: 0

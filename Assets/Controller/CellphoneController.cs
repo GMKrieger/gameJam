@@ -31,7 +31,7 @@ public class CellphoneController : MonoBehaviour
         if (RealLifeMoney.money <= 0){
             text.color = new Color(0.9f, 0.2f, 0.3f, 1.0f);
             RealLifeMoney.failCount += 1;
-            if(RealLifeMoney.failCount == 3) {
+            if(RealLifeMoney.failCount == 4) {
                 SceneManager.LoadScene("BadEnding");
             }
         }
