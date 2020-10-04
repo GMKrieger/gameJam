@@ -82,7 +82,6 @@ public class GameController : MonoBehaviour
             {
                 Character character = Logic.GetSingleCharacter();
                 child.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
-                child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
                 Sprite characterImage = Resources.Load<Sprite>("Characters/" + character.Arquivo);
                 child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
