@@ -18,7 +18,6 @@ public class CellphoneController : MonoBehaviour
     }
 
     public void changeScene() {
-        RealLifeMoney.money -= 20;
         SceneManager.LoadScene("Game");
     }
 
@@ -27,7 +26,15 @@ public class CellphoneController : MonoBehaviour
     {
         GameObject textGO = GameObject.Find("Money");
         Text text = textGO.GetComponent<Text>();
+        text.color = RealLifeMoney.color;
         text.text = "$" + RealLifeMoney.money.ToString();
+        if (RealLifeMoney.money <= 0){
+            text.color = new Color(0.9f, 0.2f, 0.3f, 1.0f);
+            RealLifeMoney.failCount += 1;
+            if(RealLifeMoney.failCount == 3) {
+                SceneManager.LoadScene("BadEnding");
+            }
+        }
     }
 
     // Update is called once per frame
