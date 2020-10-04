@@ -2,7 +2,7 @@
 
 namespace Assets.Service
 {
-    public class Character 
+    public class Character
     {
         public string Raridade { get; set; }
         public string Nome { get; set; }

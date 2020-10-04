@@ -14,14 +14,8 @@
 2;Mico Leão Dourado ;descricao
 2;Arara Azul;descricao
 2;Capivara;descricao
-2;Onça-Pintada;descricao
-2;Boto Cor-de-Rosa;descricao
-2;Sucuri;descricao
-2;Tamanduá Bandeira;descricao
 3;Cristo Redentor;descricao
 3;Cataratas do Iguaçu;descricao
-3;Parque do Ibirapuera;descricao
-3;Gruta da Lagoa Azul;descricao
 3;Floresta amazônica;descricao
 3;Centro Histórico de Salvador;descricao
 4;Sudeste;descricao

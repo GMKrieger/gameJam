@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Service;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,28 +9,34 @@ using UnityEngine;
 public class GachaLogic : MonoBehaviour
 {
 
-    public GachaCharacter GetCharacter()
+    public Character GetSingleCharacter()
     {
-        GachaCharacter gachaCharacter = new GachaCharacter();
+        GachaCharacter gachaCharacter = gameObject.AddComponent<GachaCharacter>();
         int roll = UnityEngine.Random.Range(1, 1000);
+        Character character;
 
-        if (roll <= 500) { //1 estrela
-            gachaCharacter.getRandomCharacterByRarity("1");
+        if (roll <= 500)
+        { //1 estrela
+            character = gachaCharacter.getRandomCharacterByRarity("1");
         }
-        else if (roll <= 750) { //2 estrelas
-            gachaCharacter.getRandomCharacterByRarity("2");
+        else if (roll <= 750)
+        { //2 estrelas
+            character = gachaCharacter.getRandomCharacterByRarity("2");
         }
-        else if (roll <= 900) { //3 estrelas
-            gachaCharacter.getRandomCharacterByRarity("3");
+        else if (roll <= 900)
+        { //3 estrelas
+            character = gachaCharacter.getRandomCharacterByRarity("3");
         }
-        else if (roll <= 999) { //4 estrelas
-            gachaCharacter.getRandomCharacterByRarity("4");
+        else if (roll <= 999)
+        { //4 estrelas
+            character = gachaCharacter.getRandomCharacterByRarity("4");
         }
-        else {
-            gachaCharacter.getRandomCharacterByRarity("5");
+        else
+        {//5 estrela sortudo da porra vai pra puta que pariu
+            character = gachaCharacter.getRandomCharacterByRarity("5");
         }
 
-        return gachaCharacter;
+        return character;
     }
 
     /*
