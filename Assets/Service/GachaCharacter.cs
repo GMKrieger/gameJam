@@ -11,9 +11,7 @@ public class GachaCharacter : MonoBehaviour
     private List<Character> AllCharacters;
     public GachaCharacter()
     {
-        //string currentFolder = Application.dataPath;
-
-        AllCharacters = File.ReadAllLines(@"C:\Users\Computador\Desktop\gamejam\gameJam\Assets\Data\characters.txt")
+        AllCharacters = File.ReadAllLines(@"Assets\Resources\Characters\characters.txt")
             .Select(linha => Character.fromText(linha))
             .ToList();
     }

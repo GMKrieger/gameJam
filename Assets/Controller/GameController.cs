@@ -43,6 +43,8 @@ public class GameController : MonoBehaviour
 
     // Rolls 1 gacha
     public void roll1Gacha() {
+        a255.a = 255;
+        a255.r = a255.g = a255.b = 1;
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
         int oldTicket = Int16.Parse(text.text.Remove(0, 1));
@@ -59,9 +61,9 @@ public class GameController : MonoBehaviour
             GachaLogic Logic = gameObject.AddComponent<GachaLogic>();
             Character character = Logic.GetSingleCharacter();
             characterContainer.transform.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
+            Sprite characterImage = Resources.Load<Sprite>("Characters/2Estrelas/" + character.Arquivo);
+            characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().color = a255;
-            
-
         }
     }
 
@@ -88,7 +90,6 @@ public class GameController : MonoBehaviour
                 child.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             }
-
         }
     }
 

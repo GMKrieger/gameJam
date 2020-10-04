@@ -6,7 +6,7 @@ namespace Assets.Service
     {
         public string Raridade { get; set; }
         public string Nome { get; set; }
-        public string Texto { get; set; }
+        public string Arquivo { get; set; }
 
         public static Character fromText(string line)
         {
@@ -15,7 +15,7 @@ namespace Assets.Service
             {
                 Raridade = values[0],
                 Nome = values[1],
-                Texto = values[2]
+                Arquivo = values[2]
             };
             return character;
         }

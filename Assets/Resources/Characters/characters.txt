@@ -8,12 +8,12 @@
 1;Ímã de Geladeira disk Gás;descricao
 1;Coxinha;descricao
 1;Copo Americano;descricao
-2;Vira Lata Caramelo (♂);descricao
-2;Lobo guará (♀);descricao
-2;Crocodilo Papo-amarelo (♂);descricao
-2;Mico Leão Dourado ;descricao
-2;Arara Azul;descricao
-2;Capivara;descricao
+2;Vira Lata Caramelo (♂);ViraLataCaramelo
+2;Lobo guará (♀);LogoGuara
+2;Crocodilo Papo-Amarelo (♂);JacareDePapoAmarelo
+2;Mico Leão Dourado;MicoLeaoDourado
+2;Arara Azul;AraraAzul
+2;Capivara;Capivara
 3;Cristo Redentor;descricao
 3;Cataratas do Iguaçu;descricao
 3;Floresta amazônica;descricao
