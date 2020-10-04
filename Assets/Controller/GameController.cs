@@ -68,8 +68,10 @@ public class GameController : MonoBehaviour
     }
 
     // Rolls 10 gacha
-    public void roll10Gacha()
-    {
+    public void roll10Gacha() {
+        //Set colors
+        a255.a = 255;
+        a255.r = a255.g = a255.b = 1;
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
         int oldTicket = Int16.Parse(text.text.Remove(0, 1));
@@ -88,6 +90,8 @@ public class GameController : MonoBehaviour
             {
                 Character character = Logic.GetSingleCharacter();
                 child.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
+                Sprite characterImage = Resources.Load<Sprite>("Characters/2Estrelas/" + character.Arquivo);
+                child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             }
         }
