@@ -26,25 +26,18 @@ public class GameController : MonoBehaviour
         oneRoll = oneRollGO.GetComponent<Image>();
         ticket = ticketGO.GetComponent<Image>();
 
-
-        //Setup button turn on/off bodge
-        a255.a = 255;
-        a255.r = a255.g = a255.b = 1;
-
-        a0.a = 0;
-        a0.r = a0.g = a0.b = 1;
+        setColorVariables();
 
         //Turns on buttons
         tenRolls.color = oneRoll.color = ticket.color = a255;
 
         //Sets text value
-        text.text = "x 100";
+        text.text = "x 10000";
     }
 
     // Rolls 1 gacha
     public void roll1Gacha() {
-        a255.a = 255;
-        a255.r = a255.g = a255.b = 1;
+        setColorVariables();
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
         int oldTicket = Int16.Parse(text.text.Remove(0, 1));
@@ -61,7 +54,7 @@ public class GameController : MonoBehaviour
             GachaLogic Logic = gameObject.AddComponent<GachaLogic>();
             Character character = Logic.GetSingleCharacter();
             characterContainer.transform.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
-            Sprite characterImage = Resources.Load<Sprite>("Characters/2Estrelas/" + character.Arquivo);
+            Sprite characterImage = Resources.Load<Sprite>("Characters/" + character.Arquivo);
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().color = a255;
         }
@@ -70,6 +63,7 @@ public class GameController : MonoBehaviour
     // Rolls 10 gacha
     public void roll10Gacha()
     {
+        setColorVariables();
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
         int oldTicket = Int16.Parse(text.text.Remove(0, 1));
@@ -89,10 +83,21 @@ public class GameController : MonoBehaviour
                 Character character = Logic.GetSingleCharacter();
                 child.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
+                Sprite characterImage = Resources.Load<Sprite>("Characters/" + character.Arquivo);
+                child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
+                child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             }
         }
     }
+    public void setColorVariables()
+    {
+        //Setup button turn on/off bodge
+        a255.a = 255;
+        a255.r = a255.g = a255.b = 1;
 
+        a0.a = 0;
+        a0.r = a0.g = a0.b = 1;
+    }
     public void cleanScreen()
     {
         GameObject characterContainerSingle = GameObject.Find("CharacterContainerSingle");
