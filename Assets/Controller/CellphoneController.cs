@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Threading;
 
 
 public class CellphoneController : MonoBehaviour
@@ -20,13 +18,16 @@ public class CellphoneController : MonoBehaviour
     }
 
     public void changeScene() {
+        RealLifeMoney.money -= 20;
         SceneManager.LoadScene("Game");
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject textGO = GameObject.Find("Money");
+        Text text = textGO.GetComponent<Text>();
+        text.text = "$" + RealLifeMoney.money.ToString();
     }
 
     // Update is called once per frame

@@ -1,6 +1,5 @@
 ﻿using Assets.Service;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +24,7 @@ public class GameController : MonoBehaviour
         tenRolls = tenRollsGO.GetComponent<Image>();
         oneRoll = oneRollGO.GetComponent<Image>();
         ticket = ticketGO.GetComponent<Image>();
+
 
         setColorVariables();
 
