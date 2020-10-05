@@ -187,17 +187,20 @@ public class GameWorkMorningController : MonoBehaviour
         {
             SceneManager.LoadScene("ChanEnding");
         }
-        checkCharacterList();
-        GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
-        cleanScreen();
-        foreach (Transform child in characterContainerGroup.transform)
+        else
         {
-            Character currentCharacter = listaPersonagens.Pop();
-            child.GetChild(1).gameObject.GetComponent<Text>().text = currentCharacter.Nome;
-            Sprite characterImage = Resources.Load<Sprite>("Characters/" + currentCharacter.Arquivo);
-            child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
-            child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             checkCharacterList();
+            GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
+            cleanScreen();
+            foreach (Transform child in characterContainerGroup.transform)
+            {
+                Character currentCharacter = listaPersonagens.Pop();
+                child.GetChild(1).gameObject.GetComponent<Text>().text = currentCharacter.Nome;
+                Sprite characterImage = Resources.Load<Sprite>("Characters/" + currentCharacter.Arquivo);
+                child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
+                child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
+                checkCharacterList();
+            }
         }
     }
 
@@ -239,9 +242,12 @@ public class GameWorkMorningController : MonoBehaviour
         {
             SceneManager.LoadScene("ChanEnding");
         }
-        cleanScreen();
-        handleUI(true);
-        handleGachaUI(false);
+        else
+        {
+            cleanScreen();
+            handleUI(true);
+            handleGachaUI(false);
+        }
     }
 
     public void closePurchase()

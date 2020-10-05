@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class InGameMoney{
-    static public int money = 100;
+    static public int money = 1000000;
     static public Color color = new Color(0.5f, 0.9f, 0.2f, 1f);
 
     public void dailyIncome(){
