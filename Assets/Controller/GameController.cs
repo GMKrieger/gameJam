@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour
             characterContainer.transform.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
             Sprite characterImage = Resources.Load<Sprite>("Characters/" + character.Arquivo);
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
+            characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().preserveAspect = true;
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             handleUI(false);
             GameObject.Find("GachaUI").transform.Find("Return").gameObject.SetActive(true);
@@ -94,6 +95,7 @@ public class GameController : MonoBehaviour
                 child.GetChild(1).gameObject.GetComponent<Text>().text = currentCharacter.Nome;
                 Sprite characterImage = Resources.Load<Sprite>("Characters/" + currentCharacter.Arquivo);
                 child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
+                child.GetChild(0).gameObject.GetComponent<Image>().preserveAspect = true;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             }
             handleUI(false);
