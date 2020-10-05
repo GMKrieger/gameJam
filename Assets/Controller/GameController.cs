@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -27,13 +28,14 @@ public class GameController : MonoBehaviour
         oneRoll = oneRollGO.GetComponent<Image>();
         ticket = ticketGO.GetComponent<Image>();
 
+
         setColorVariables();
 
         //Turns on buttons
         tenRolls.color = oneRoll.color = ticket.color = a255;
 
         //Sets text value
-        text.text = "x 10000";
+        text.text = "x " + InGameMoney.money.ToString();
     }
 
     // Rolls 1 gacha
@@ -41,16 +43,18 @@ public class GameController : MonoBehaviour
         setColorVariables();
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
-        int oldTicket = Int16.Parse(text.text.Remove(0, 1));
+        int oldTicket = InGameMoney.money;
         int newTicket = oldTicket - 10;
         GameObject characterContainer = GameObject.Find("CharacterContainerSingle");
         if (newTicket < 0)
         {
-
+            GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
+            purchaseScreen.GetComponent<Image>().enabled = true;
         }
         else
         {
-            text.text = "x " + newTicket.ToString();
+            InGameMoney.money = newTicket;
+            text.text = "x " + InGameMoney.money.ToString();
             cleanScreen();
             GachaLogic Logic = gameObject.AddComponent<GachaLogic>();
             Character character = Logic.GetSingleCharacter();
@@ -69,15 +73,17 @@ public class GameController : MonoBehaviour
         setColorVariables();
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
-        int oldTicket = Int16.Parse(text.text.Remove(0, 1));
+        int oldTicket = InGameMoney.money;
         int newTicket = oldTicket - 100;
         if (newTicket < 0)
         {
-
+            GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
+            purchaseScreen.GetComponent<Image>().enabled = true;
         }
         else
         {
-            text.text = "x " + newTicket.ToString();
+            InGameMoney.money = newTicket;
+            text.text = "x " + InGameMoney.money.ToString();
             GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
             cleanScreen();
             GachaLogic Logic = gameObject.AddComponent<GachaLogic>();
@@ -99,7 +105,6 @@ public class GameController : MonoBehaviour
         //Setup button turn on/off bodge
         a255.a = 255;
         a255.r = a255.g = a255.b = 1;
-
         a0.a = 0;
         a0.r = a0.g = a0.b = 1;
     }
@@ -114,7 +119,17 @@ public class GameController : MonoBehaviour
             child.GetChild(1).gameObject.GetComponent<Text>().text = "";
             child.GetChild(0).gameObject.GetComponent<Image>().color = a0;
         }
+    }
 
+    public void expendingRealMoney() {
+        RealLifeMoney.money -= 20;
+        InGameMoney.money += 100;
+        GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
+        purchaseScreen.GetComponent<Image>().enabled = false;
+    }
+
+    public void closeCellphone() {
+        SceneManager.LoadScene("Cellphone");
     }
 
     public void loadMoreGachaCharacters()
@@ -176,6 +191,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         handleGachaUI(false);
+        GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
+        purchaseScreen.GetComponent<Image>().enabled = false;
     }
 
     // Update is called once per frame

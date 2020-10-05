@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Threading;
 
 
 public class CellphoneController : MonoBehaviour
@@ -26,7 +24,17 @@ public class CellphoneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject textGO = GameObject.Find("Money");
+        Text text = textGO.GetComponent<Text>();
+        text.color = RealLifeMoney.color;
+        text.text = "$" + RealLifeMoney.money.ToString();
+        if (RealLifeMoney.money <= 0){
+            text.color = new Color(0.9f, 0.2f, 0.3f, 1.0f);
+            RealLifeMoney.failCount += 1;
+            if(RealLifeMoney.failCount == 4) {
+                SceneManager.LoadScene("BadEnding");
+            }
+        }
     }
 
     // Update is called once per frame
