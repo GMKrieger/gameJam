@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06132078, g: 0.23632097, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -456,21 +456,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You uninstall the game
+  m_Text: 'Suddenly... I don''t feel like playing as much. I feel like I''ve got
+    other priorities right now.
 
 
-    You don''t feel like playing it anymore
+    I think I''ll uninstall the game.
 
 
     It''s
-    only occupying space on your phone
+    only occupying space on my phone''s storage.
 
 
-    It was fun while it lasted, but for
-    now...
+    Well... It was fun while it
+    lasted... Maybe I''ll pick it back up later, and Brasil-chan will probably be
+    waiting for me then.
 
 
-    You can move on'
+    But for now...
+
+
+    I''m moving on.'
 --- !u!222 &565787976
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -535,7 +540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aec1cd03c1dfb9e40a2bb4d7f512187d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1147be3ffb8294c4c99b9b5d89225e45, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
