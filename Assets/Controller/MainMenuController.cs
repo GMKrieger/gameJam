@@ -39,6 +39,8 @@ public class MainMenuController : MonoBehaviour
         panel.gameObject.SetActive(false);
         InGameMoney.money = 100;
         RealLifeMoney.money = 10;
+        RealLifeMoney.successCount = 0;
+        RealLifeMoney.failCount = 0;
     }
 
     // Update is called once per frame
