@@ -510,8 +510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000061036}
-  m_SizeDelta: {x: 1113, y: 625.9999}
+  m_AnchoredPosition: {x: -0.000016212, y: -13}
+  m_SizeDelta: {x: 900.2312, y: 596.98584}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151596106
 MonoBehaviour:
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aec1cd03c1dfb9e40a2bb4d7f512187d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 501dd8f78ac1a2345ac6ab659702bca1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -619,25 +619,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You cheated not only the game, but yourself.
-
-
-    You didn''t grow. You
-    didn''t improve.
-
-
-    You took a shortcut and gained nothing.
-
-
-    You experienced
-    a hollow victory.
-
-
-    Nothing was risked and nothing was gained.
-
-
-    It''s
-    sad that you don''t know the difference.'
+  m_Text: "I finally got her... The waifu of my dreams!! After all these rolls, after
+    all this money wasted, after all the suffering...\n\nShe's mine!! Brasil-chan,
+    my sweet beloved!~ \n\r\n\r...\n\n...\n\n...\n\nNow, to save Selos for the next
+    event banner... With Wedding-Dress Brasil-Chan!!!"
 --- !u!222 &1404584880
 CanvasRenderer:
   m_ObjectHideFlags: 0
