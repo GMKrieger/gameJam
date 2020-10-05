@@ -135,10 +135,23 @@ public class GameBedMorningController : MonoBehaviour
 
     public void expendingRealMoney() {
         RealLifeMoney.money -= 20;
-        InGameMoney.money += 100;
-        text.text = "x " + InGameMoney.money.ToString();
-        GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
-        GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(false);
+        if (RealLifeMoney.money < 0)
+        {
+            RealLifeMoney.money += 20;
+            RealLifeMoney.failCount += 1;
+            GameObject canvas = GameObject.Find("Canvas");
+            GameObject noMoney = canvas.transform.Find("NoMoney").gameObject;
+            noMoney.gameObject.SetActive(true);
+            Animator anim = noMoney.gameObject.GetComponent<Animator>();
+            anim.SetBool("OutOfMoney", true);
+        }
+        else
+        {
+            InGameMoney.money += 100;
+            text.text = "x " + InGameMoney.money.ToString();
+            GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
+            GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(false);
+        }
     }
 
     public void changeScene() {
@@ -228,6 +241,7 @@ public class GameBedMorningController : MonoBehaviour
         handleGachaUI(false);
         GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("NoMoney").gameObject.SetActive(false);
     }
 
     // Update is called once per frame
