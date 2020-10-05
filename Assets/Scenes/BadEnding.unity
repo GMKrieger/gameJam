@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91, y: -30.5}
+  m_AnchoredPosition: {x: 25, y: -27}
   m_SizeDelta: {x: 543.1006, y: 310.99628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1177406521
@@ -330,31 +330,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'YOU WENT BANKRUPT YOU IDIOT
-
-
-    YOU ABSOLUTE BUFFOON
-
-
-    DON''T PLAY
-    GACHA GAMES YOU DONKEY
-
-
-    GOD DAMN PIECE OF SHIT GAMES
-
-
-    FUCK THEM
-
-
-    NOT
-    LITERALLY, YOU MORON
-
-
-    YOUR WAIFUS ARE JUST PNGS
-
-
-    GET A LIFE YOU FUCKING
-    WEEB'
+  m_Text: "I wasted all of my money on rolls... I couldn't keep myself from playing...
+    \r\n\r\nI'm bankrupt!\r\n\r\nIf only I had parsed my rolls better... If only
+    I had a better grasp of the ammount of money I was sinking in...\r\n\r\nIf only
+    Brasil-chan had been mine........ It would have been all worth it........"
 --- !u!222 &1177406522
 CanvasRenderer:
   m_ObjectHideFlags: 0
