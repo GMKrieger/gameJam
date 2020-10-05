@@ -23,4 +23,4 @@
 4;Nordeste;descricao
 4;Centro-Oeste;descricao
 4;Sul;descricao
-5;Brasil;descricao
+5;Brasil-Chan;5Estrelas/BrasilChan

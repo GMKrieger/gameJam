@@ -19,7 +19,7 @@ public class GachaCharacter : MonoBehaviour
     public Character getRandomCharacterByRarity(string rarity)
     {
         var character = AllCharacters.Where(c => c.Raridade == rarity).ToList();
-        return character[UnityEngine.Random.Range(1, character.Count)];
+        return character[Random.Range(0, character.Count)];
     }
 
     // Start is called before the first frame update

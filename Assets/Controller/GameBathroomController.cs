@@ -14,6 +14,7 @@ public class GameBathroomController : MonoBehaviour
     private Color a255 = new Color();
     private Color a0 = new Color();
     private Stack<Character> listaPersonagens = new Stack<Character>();
+    private bool brasilChan = false;
     // Called when animation ends, loads gacha interface
     public void startGacha()
     {
@@ -70,6 +71,9 @@ public class GameBathroomController : MonoBehaviour
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             handleUI(false);
             GameObject.Find("GachaUI").transform.Find("Return").gameObject.SetActive(true);
+            if(character.Raridade == "5") {
+                brasilChan = true;
+            }
         }
     }
 
@@ -103,9 +107,14 @@ public class GameBathroomController : MonoBehaviour
                 child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
                 child.GetChild(0).gameObject.GetComponent<Image>().preserveAspect = true;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
+                if (currentCharacter.Raridade == "5")
+                {
+                    brasilChan = true;
+                }
             }
             handleUI(false);
             GameObject.Find("GachaUI").transform.Find("Next").gameObject.SetActive(true);
+
         }
     }
     public void setColorVariables()
@@ -153,6 +162,10 @@ public class GameBathroomController : MonoBehaviour
 
     public void loadMoreGachaCharacters()
     {
+        if (brasilChan)
+        {
+            SceneManager.LoadScene("ChanEnding");
+        }
         checkCharacterList();
         GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
         cleanScreen();
@@ -201,6 +214,10 @@ public class GameBathroomController : MonoBehaviour
 
     public void resetScreen()
     {
+        if (brasilChan)
+        {
+            SceneManager.LoadScene("ChanEnding");
+        }
         cleanScreen();
         handleUI(true);
         handleGachaUI(false);
