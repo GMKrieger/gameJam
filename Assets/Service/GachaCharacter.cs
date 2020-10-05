@@ -33,9 +33,9 @@ public class GachaCharacter : MonoBehaviour
                                             "3;✪✪✪ | Cataratas do Iguaçu;3Estrelas/CataratasDoIguacu",
                                             "3;✪✪✪ | Floresta amazônica;3Estrelas/FlorestaAmazonica",
                                             "3;✪✪✪ | Gruta da Lagoa Azul;3Estrelas/GrutaDaLagoaAzul",
-                                            "4;⍟⍟⍟⍟ | Machado de Assis;4Estrelas/MachadoDeAssis",
-                                            "4;⍟⍟⍟⍟ | Alberto Santos-Dumont;4Estrelas/SantosDumont",
-                                            "4;⍟⍟⍟⍟ | Dercy Gonçalves;4Estrelas/DercyGoncalves",
+                                            "4;✯✯✯✯ | Machado de Assis;4Estrelas/MachadoDeAssis",
+                                            "4;✯✯✯✯ | Alberto Santos-Dumont;4Estrelas/SantosDumont",
+                                            "4;✯✯✯✯ | Dercy Gonçalves;4Estrelas/DercyGoncalves",
                                             "5;🌟🌟🌟🌟🌟 | Brasil-Chan;5Estrelas/BrasilChan" };
         AllCharacters = arquivo.Select(linha => Character.fromText(linha))
             .ToList();
