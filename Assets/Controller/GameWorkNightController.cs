@@ -52,9 +52,8 @@ public class GameWorkNightController : MonoBehaviour
         GameObject characterContainer = GameObject.Find("CharacterContainerSingle");
         if (newTicket < 0)
         {
-            GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
-            purchaseScreen.GetComponent<Image>().enabled = true;
-            SceneManager.LoadScene("BadEnding");
+            GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(true);
         }
         else
         {
@@ -87,9 +86,8 @@ public class GameWorkNightController : MonoBehaviour
         int newTicket = oldTicket - 100;
         if (newTicket < 0)
         {
-            GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
-            purchaseScreen.GetComponent<Image>().enabled = true;
-            SceneManager.LoadScene("BadEnding");
+            GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(true);
         }
         else
         {
@@ -141,8 +139,9 @@ public class GameWorkNightController : MonoBehaviour
     {
         RealLifeMoney.money -= 20;
         InGameMoney.money += 100;
-        GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
-        purchaseScreen.GetComponent<Image>().enabled = false;
+        text.text = "x " + InGameMoney.money.ToString();
+        GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(false);
     }
 
     public void changeScene()
@@ -222,12 +221,18 @@ public class GameWorkNightController : MonoBehaviour
         handleGachaUI(false);
     }
 
+    public void closePurchase()
+    {
+        GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         handleGachaUI(false);
-        GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
-        purchaseScreen.GetComponent<Image>().enabled = false;
+        GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("PurchaseClose").gameObject.SetActive(false);
     }
 
     // Update is called once per frame
