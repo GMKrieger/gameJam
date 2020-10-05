@@ -63,6 +63,8 @@ public class CellphoneSubwayController : MonoBehaviour
         {
             SceneManager.LoadScene("GoodEnding");
         }
+        //InGameMoney.money += Random.RandomRange(30, 99);
+        InGameMoney.money += Random.RandomRange(10, 33);
     }
 
     // Update is called once per frame
