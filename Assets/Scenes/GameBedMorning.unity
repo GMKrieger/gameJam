@@ -718,7 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myFx: {fileID: 557646343}
   hoverFx: {fileID: 0}
-  clickFx: {fileID: 0}
+  clickFx: {fileID: 8300000, guid: 7b66852064e47e14bbc9c99466534338, type: 3}
 --- !u!1 &501941876
 GameObject:
   m_ObjectHideFlags: 0
