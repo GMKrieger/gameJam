@@ -61,7 +61,7 @@ public class CellphoneBedMorningController : MonoBehaviour
             SceneManager.LoadScene("GoodEnding");
         }
         //InGameMoney.money += Random.RandomRange(30, 99);
-        InGameMoney.money += Random.RandomRange(10, 33);
+        InGameMoney.money += Random.Range(10, 33);
         RealLifeMoney.money += 20;
     }
 
