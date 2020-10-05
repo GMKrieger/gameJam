@@ -30,7 +30,14 @@ public class CellphoneBathController : MonoBehaviour
     public void changeScene()
     {
         RealLifeMoney.successCount += 1;
-        SceneManager.LoadScene("CellphoneWorkMorning");
+        if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        }
+        else
+        {
+            SceneManager.LoadScene("CellphoneWorkMorning");
+        }
     }
 
     public void loadScene()

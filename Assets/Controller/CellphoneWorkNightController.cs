@@ -30,7 +30,14 @@ public class CellphoneWorkNightController : MonoBehaviour
     public void changeScene()
     {
         RealLifeMoney.successCount += 1;
-        SceneManager.LoadScene("CellphoneSubway");
+        if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        }
+        else
+        {
+            SceneManager.LoadScene("CellphoneSubway");
+        }
     }
 
     public void loadScene()
