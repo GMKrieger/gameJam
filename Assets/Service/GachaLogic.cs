@@ -11,7 +11,7 @@ public class GachaLogic : MonoBehaviour
     public Character GetSingleCharacter()
     {
         GachaCharacter gachaCharacter = gameObject.AddComponent<GachaCharacter>();
-        int roll = UnityEngine.Random.Range(1, 1000);
+        int roll = UnityEngine.Random.Range(1, 1001);
         Character character;
 
         if (roll <= 500)
@@ -44,7 +44,7 @@ public class GachaLogic : MonoBehaviour
         Stack<Character> characterList = new Stack<Character>();
         for (int i = 0; i < quantity; i++)
         {
-            int roll = UnityEngine.Random.Range(1, 1000);
+            int roll = UnityEngine.Random.Range(1, 1001);
             Character character;
 
             if (roll <= 500)
