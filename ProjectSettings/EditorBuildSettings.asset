@@ -57,6 +57,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GoodEnding.unity
     guid: f4c7146c6b01e074d924848c4eaa1fc1
   - enabled: 1
+    path: Assets/Scenes/ChanEnding.unity
+    guid: e66cb4f411b3b204c972c0f2096933b7
+  - enabled: 1
     path: Assets/Scenes/Art Test Scene.unity
     guid: 9911c1d9480ecb846a4111f1716b7928
   m_configObjects: {}
