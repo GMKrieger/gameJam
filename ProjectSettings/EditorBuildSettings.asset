@@ -12,15 +12,48 @@ EditorBuildSettings:
     path: Assets/Scenes/About.unity
     guid: de6e8a17484c99b459e3794ce329e6cd
   - enabled: 1
-    path: Assets/Scenes/Cellphone.unity
+    path: Assets/Scenes/Intro.unity
+    guid: b0c6687810e55634bb2961ae6410aae8
+  - enabled: 1
+    path: Assets/Scenes/CellphoneBedMorning.unity
     guid: a1463b88ab76bab42b051d0b02cc4253
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/GameBedMorning.unity
     guid: 2d4a28abb04cd654f846628697fbd872
+  - enabled: 1
+    path: Assets/Scenes/CellphoneBathroom.unity
+    guid: 049793645affafd46bd819dead1066d9
+  - enabled: 1
+    path: Assets/Scenes/GameBathroom.unity
+    guid: 14d5e997787cf544893445355f730497
+  - enabled: 1
+    path: Assets/Scenes/CellphoneWorkMorning.unity
+    guid: ab178271bd5c80c40b29b77cb6894ecc
+  - enabled: 1
+    path: Assets/Scenes/GameWorkMorning.unity
+    guid: e3f5f495dbce2ca40b1e195f9a01461b
+  - enabled: 1
+    path: Assets/Scenes/CellphoneWorkNight.unity
+    guid: 9d16766bc68d1b14192cca511661370a
+  - enabled: 1
+    path: Assets/Scenes/GameWorkNight.unity
+    guid: a675bdaff5e9e244592727eed8c00683
+  - enabled: 1
+    path: Assets/Scenes/CellphoneSubway.unity
+    guid: 24bfcdcf9d5925b40ae24d2e95bc5ce5
+  - enabled: 1
+    path: Assets/Scenes/GameSubway.unity
+    guid: cf9ef80dacfa9c64cabe49b9d4b2103e
+  - enabled: 1
+    path: Assets/Scenes/CellphoneBedNight.unity
+    guid: c641b5c787edf0b4aab77d3b34089bcd
+  - enabled: 1
+    path: Assets/Scenes/GameBedNight.unity
+    guid: dcc3bb603105aa14da09bdd5a28b1839
   - enabled: 1
     path: Assets/Scenes/BadEnding.unity
     guid: 19950e6ce4faf7f4e9b860ceecce6c51
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: b0c6687810e55634bb2961ae6410aae8
+    path: Assets/Scenes/Art Test Scene.unity
+    guid: 9911c1d9480ecb846a4111f1716b7928
   m_configObjects: {}

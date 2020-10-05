@@ -1,11 +1,10 @@
 ﻿using Assets.Service;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameBedNightController : MonoBehaviour
 {
     private Text text;
     private Image tenRolls;
@@ -15,13 +14,16 @@ public class GameController : MonoBehaviour
     private Color a0 = new Color();
     private Stack<Character> listaPersonagens = new Stack<Character>();
     // Called when animation ends, loads gacha interface
-    public void startGacha() {
+    public void startGacha()
+    {
 
         //Instances objects
         GameObject textGO = GameObject.Find("TicketNumber");
         GameObject tenRollsGO = GameObject.Find("10rolls");
         GameObject oneRollGO = GameObject.Find("1roll");
         GameObject ticketGO = GameObject.Find("TicketNumberImage");
+        GameObject panel = GameObject.Find("Panel");
+        panel.gameObject.SetActive(false);
 
         text = textGO.GetComponent<Text>();
         tenRolls = tenRollsGO.GetComponent<Image>();
@@ -39,7 +41,8 @@ public class GameController : MonoBehaviour
     }
 
     // Rolls 1 gacha
-    public void roll1Gacha() {
+    public void roll1Gacha()
+    {
         setColorVariables();
         GameObject textGO = GameObject.Find("TicketNumber");
         text = textGO.GetComponent<Text>();
@@ -118,22 +121,33 @@ public class GameController : MonoBehaviour
         GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
         characterContainerSingle.transform.GetChild(1).gameObject.GetComponent<Text>().text = "";
         characterContainerSingle.transform.GetChild(0).gameObject.GetComponent<Image>().color = a0;
-        foreach(Transform child in characterContainerGroup.transform)
+        foreach (Transform child in characterContainerGroup.transform)
         {
             child.GetChild(1).gameObject.GetComponent<Text>().text = "";
             child.GetChild(0).gameObject.GetComponent<Image>().color = a0;
         }
     }
 
-    public void expendingRealMoney() {
+    public void expendingRealMoney()
+    {
         RealLifeMoney.money -= 20;
         InGameMoney.money += 100;
         GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
         purchaseScreen.GetComponent<Image>().enabled = false;
     }
 
-    public void closeCellphone() {
-        SceneManager.LoadScene("Cellphone");
+    public void changeScene()
+    {
+        SceneManager.LoadScene("CellphoneBedMorning");
+    }
+
+    public void closeCellphone()
+    {
+        GameObject canvas = GameObject.Find("Canvas");
+        GameObject panel = canvas.transform.Find("Panel").gameObject;
+        panel.gameObject.SetActive(true);
+        Animator anim = panel.gameObject.GetComponent<Animator>();
+        anim.SetBool("FadeOutBool", true);
     }
 
     public void loadMoreGachaCharacters()
@@ -202,6 +216,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

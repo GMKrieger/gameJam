@@ -19,7 +19,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     public void gameScene() {
-        SceneManager.LoadScene("Cellphone");
+        SceneManager.LoadScene("CellphoneBedMorning");
     }
 
     public void about()

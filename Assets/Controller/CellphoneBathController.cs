@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class CellphoneController : MonoBehaviour
+public class CellphoneBathController : MonoBehaviour
 {
 
     public float time = 0.0f;
@@ -22,11 +22,19 @@ public class CellphoneController : MonoBehaviour
         anim.SetBool("moveCellphone", true);
     }
 
-    public void changeScene() {
-        SceneManager.LoadScene("Game");
+    public void openGame()
+    {
+        SceneManager.LoadScene("GameBathroom");
     }
 
-    public void loadScene() {
+    public void changeScene()
+    {
+        RealLifeMoney.successCount += 1;
+        SceneManager.LoadScene("CellphoneWorkMorning");
+    }
+
+    public void loadScene()
+    {
         GameObject panel = GameObject.Find("Panel");
         panel.gameObject.SetActive(false);
         GameObject textGO = GameObject.Find("Money");
@@ -37,10 +45,6 @@ public class CellphoneController : MonoBehaviour
         {
             text.color = new Color(0.9f, 0.2f, 0.3f, 1.0f);
             RealLifeMoney.failCount += 1;
-            if (RealLifeMoney.failCount == 4)
-            {
-                SceneManager.LoadScene("BadEnding");
-            }
         }
     }
 
@@ -51,6 +55,14 @@ public class CellphoneController : MonoBehaviour
         GameObject panel = GameObject.Find("Panel");
         Animator anim = panel.gameObject.GetComponent<Animator>();
         anim.SetBool("FadeInBool", true);
+        if (RealLifeMoney.failCount == 3)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        if (RealLifeMoney.successCount == 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        }
     }
 
     // Update is called once per frame
@@ -61,7 +73,8 @@ public class CellphoneController : MonoBehaviour
         GameObject notification = GameObject.Find("Notification");
         Animator animNoti = notification.gameObject.GetComponent<Animator>();
 
-        if (time > 3 && !didShow) {
+        if (time > 3 && !didShow)
+        {
             didShow = true;
             animNoti.SetBool("Show", true);
             int lolrandom = Random.Range(1, 21);
@@ -84,7 +97,6 @@ public class CellphoneController : MonoBehaviour
             panel.gameObject.SetActive(true);
             Animator anim = panel.gameObject.GetComponent<Animator>();
             anim.SetBool("FadeOutBool", true);
-            SceneManager.LoadScene("BadEnding");
         }
 
     }
