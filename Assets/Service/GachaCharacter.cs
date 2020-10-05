@@ -13,9 +13,9 @@ public class GachaCharacter : MonoBehaviour
     {
 
         //AllCharacters = File.ReadAllLines(@"Assets\Resources\Characters\characters.txt");
-        //RIP: 1* = ☆, 2* = ★★, 3* = ✪✪✪, 4* = ✯✯✯✯, 5* = 🌟🌟🌟🌟🌟
+        //RIP: 1* = ☆, 2* = ★★, 3* = ✪✪✪, 4* = ✯✯✯✯, 5* = 🌟🌟🌟🌟🌟, ♂, ♀
 
-        string[] arquivo = new string[] { "1;☆ | Caipirinha;1Estrela/Caipirinha",
+        string[] arquivo = new string[] { "1;* | Caipirinha;1Estrela/Caipirinha",
                                             "1;* | Feijoada;1Estrela/Feijoada",
                                             "1;* | Pastel;1Estrela/Pastel",
                                             "1;* | Catupiry;1Estrela/Catupiry",
@@ -25,9 +25,9 @@ public class GachaCharacter : MonoBehaviour
                                             "1;* | Côco Verde;1Estrela/Coco",
                                             "1;* | Coxinha;1Estrela/Coxinha",
                                             "1;* | Brigadeiro;1Estrela/Brigadeiro",
-                                            "2;** | Vira Lata Caramelo (♂);2Estrelas/ViraLataCaramelo",
-                                            "2;** | Lobo Guará (♀);2Estrelas/LoboGuara",
-                                            "2;** | Crocodilo Papo-Amarelo (♂);2Estrelas/JacareDePapoAmarelo",
+                                            "2;** | Vira Lata Caramelo;2Estrelas/ViraLataCaramelo",
+                                            "2;** | Lobo Guará;2Estrelas/LoboGuara",
+                                            "2;** | Crocodilo Papo-Amarelo;2Estrelas/JacareDePapoAmarelo",
                                             "2;** | Mico Leão Dourado;2Estrelas/MicoLeaoDourado",
                                             "2;** | Arara Azul;2Estrelas/AraraAzul",
                                             "2;** | Capivara;2Estrelas/Capivara",
