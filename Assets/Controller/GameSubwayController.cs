@@ -17,7 +17,6 @@ public class GameSubwayController : MonoBehaviour
     // Called when animation ends, loads gacha interface
     public void startGacha()
     {
-
         //Instances objects
         GameObject textGO = GameObject.Find("TicketNumber");
         GameObject tenRollsGO = GameObject.Find("10rolls");
@@ -159,7 +158,18 @@ public class GameSubwayController : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("CellphoneBedNight");
+        if (RealLifeMoney.failCount >= 6)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        else if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        }
+        else
+        {
+            SceneManager.LoadScene("CellphoneBedNight");
+        }
     }
 
     public void closeCellphone()

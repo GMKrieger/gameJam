@@ -52,15 +52,6 @@ public class CellphoneBedMorningController : MonoBehaviour
         GameObject panel = GameObject.Find("Panel");
         Animator anim = panel.gameObject.GetComponent<Animator>();
         anim.SetBool("FadeInBool", true);
-        if (RealLifeMoney.failCount == 3)
-        {
-            SceneManager.LoadScene("BadEnding");
-        }
-        if (RealLifeMoney.successCount == 6)
-        {
-            SceneManager.LoadScene("GoodEnding");
-        }
-        //InGameMoney.money += Random.RandomRange(30, 99);
         InGameMoney.money += Random.Range(10, 33);
         RealLifeMoney.money += 20;
     }

@@ -155,7 +155,17 @@ public class GameBedMorningController : MonoBehaviour
     }
 
     public void changeScene() {
-        SceneManager.LoadScene("CellphoneBathroom");
+        if (RealLifeMoney.failCount >= 6)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        else if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        } else
+        {
+            SceneManager.LoadScene("CellphoneBathroom");
+        }
     }
 
     public void closeCellphone() {

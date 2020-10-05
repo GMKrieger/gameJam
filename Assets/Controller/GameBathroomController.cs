@@ -160,7 +160,17 @@ public class GameBathroomController : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("CellphoneWorkMorning");
+        if (RealLifeMoney.failCount >= 6)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        else if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        } else
+        {
+            SceneManager.LoadScene("CellphoneWorkMorning");
+        }
     }
 
     public void closeCellphone()

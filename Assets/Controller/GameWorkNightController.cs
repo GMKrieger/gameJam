@@ -137,19 +137,19 @@ public class GameWorkNightController : MonoBehaviour
 
     public void expendingRealMoney()
     {
-        RealLifeMoney.money -= 20;
-        if (RealLifeMoney.money < 0)
+        if (RealLifeMoney.money - 20 < 0)
         {
-            RealLifeMoney.money += 20;
-            RealLifeMoney.failCount += 1;
             GameObject canvas = GameObject.Find("Canvas");
             GameObject noMoney = canvas.transform.Find("NoMoney").gameObject;
             noMoney.gameObject.SetActive(true);
             Animator anim = noMoney.gameObject.GetComponent<Animator>();
             anim.SetBool("OutOfMoney", true);
+            RealLifeMoney.failCount += 1;
+
         }
         else
         {
+            RealLifeMoney.money -= 20;
             InGameMoney.money += 100;
             text.text = "x " + InGameMoney.money.ToString();
             GameObject.Find("Canvas").transform.Find("PurchaseScreen").gameObject.SetActive(false);
@@ -159,7 +159,17 @@ public class GameWorkNightController : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("CellphoneSubway");
+        if (RealLifeMoney.failCount >= 6)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        else if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        }
+        else {
+            SceneManager.LoadScene("CellphoneSubway");
+        }
     }
 
     public void closeCellphone()

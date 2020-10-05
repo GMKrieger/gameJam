@@ -159,7 +159,17 @@ public class GameWorkMorningController : MonoBehaviour
 
     public void changeScene()
     {
-        SceneManager.LoadScene("CellphoneWorkNight");
+        if (RealLifeMoney.failCount >= 6)
+        {
+            SceneManager.LoadScene("BadEnding");
+        }
+        else if (RealLifeMoney.successCount >= 6)
+        {
+            SceneManager.LoadScene("GoodEnding");
+        } else
+        {
+            SceneManager.LoadScene("CellphoneWorkNight");
+        }
     }
 
     public void closeCellphone()
