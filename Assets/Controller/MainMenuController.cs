@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
@@ -9,6 +7,18 @@ public class MainMenuController : MonoBehaviour
 
     public void playGame()
     {
+        GameObject canvas = GameObject.Find("Canvas");
+        GameObject panel = canvas.transform.Find("Panel").gameObject;
+        panel.gameObject.SetActive(true);
+        Animator anim = panel.gameObject.GetComponent<Animator>();
+        anim.SetBool("FadeOutBool", true);
+    }
+
+    public void changeScene() {
+        SceneManager.LoadScene("Intro");
+    }
+
+    public void gameScene() {
         SceneManager.LoadScene("Cellphone");
     }
 
@@ -25,7 +35,8 @@ public class MainMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject panel = GameObject.Find("Panel");
+        panel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

@@ -21,20 +21,31 @@ public class CellphoneController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+
+    public void loadScene() {
+        GameObject panel = GameObject.Find("Panel");
+        panel.gameObject.SetActive(false);
         GameObject textGO = GameObject.Find("Money");
         Text text = textGO.GetComponent<Text>();
         text.color = RealLifeMoney.color;
         text.text = "$" + RealLifeMoney.money.ToString();
-        if (RealLifeMoney.money <= 0){
+        if (RealLifeMoney.money <= 0)
+        {
             text.color = new Color(0.9f, 0.2f, 0.3f, 1.0f);
             RealLifeMoney.failCount += 1;
-            if(RealLifeMoney.failCount == 4) {
+            if (RealLifeMoney.failCount == 4)
+            {
                 SceneManager.LoadScene("BadEnding");
             }
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        //Fades in
+        GameObject panel = GameObject.Find("Panel");
+        Animator anim = panel.gameObject.GetComponent<Animator>();
+        anim.SetBool("FadeInBool", true);
     }
 
     // Update is called once per frame
@@ -43,7 +54,12 @@ public class CellphoneController : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            SceneManager.LoadScene("Game");
+            GameObject canvas = GameObject.Find("Canvas");
+            GameObject panel = canvas.transform.Find("Panel").gameObject;
+            panel.gameObject.SetActive(true);
+            Animator anim = panel.gameObject.GetComponent<Animator>();
+            anim.SetBool("FadeOutBool", true);
+            SceneManager.LoadScene("BadEnding");
         }
     }
 }
