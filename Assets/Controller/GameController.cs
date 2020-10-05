@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour
         {
             GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
             purchaseScreen.GetComponent<Image>().enabled = true;
+            SceneManager.LoadScene("BadEnding");
         }
         else
         {
@@ -80,6 +81,7 @@ public class GameController : MonoBehaviour
         {
             GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
             purchaseScreen.GetComponent<Image>().enabled = true;
+            SceneManager.LoadScene("BadEnding");
         }
         else
         {

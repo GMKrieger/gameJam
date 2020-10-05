@@ -6,13 +6,18 @@ using UnityEngine.SceneManagement;
 public class CellphoneController : MonoBehaviour
 {
 
+    public float time = 0.0f;
     public float timeLeft = 15.0f;
+    public bool didShow = false;
+    public bool didHide = false;
 
     public void showSmartphone()
     {
         GameObject eyecon = GameObject.Find("Eyecon");
         GameObject cellphone = GameObject.Find("Cellphone");
+        GameObject notification = GameObject.Find("Notification");
         eyecon.gameObject.SetActive(false);
+        notification.gameObject.SetActive(false);
         Animator anim = cellphone.gameObject.GetComponent<Animator>();
         anim.SetBool("moveCellphone", true);
     }
@@ -20,7 +25,6 @@ public class CellphoneController : MonoBehaviour
     public void changeScene() {
         SceneManager.LoadScene("Game");
     }
-
 
     public void loadScene() {
         GameObject panel = GameObject.Find("Panel");
@@ -39,6 +43,7 @@ public class CellphoneController : MonoBehaviour
             }
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +56,27 @@ public class CellphoneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
         timeLeft -= Time.deltaTime;
+        GameObject notification = GameObject.Find("Notification");
+        Animator animNoti = notification.gameObject.GetComponent<Animator>();
+
+        if (time > 3 && !didShow) {
+            didShow = true;
+            animNoti.SetBool("Show", true);
+            int lolrandom = Random.Range(1, 21);
+            string notifFile = "notification" + lolrandom.ToString();
+            Sprite notifImage = Resources.Load<Sprite>("Notifications/" + notifFile);
+            notification.gameObject.GetComponent<Image>().sprite = notifImage;
+        }
+
+        if (time > 10 && !didHide)
+        {
+            didHide = true;
+            animNoti.SetBool("Show", false);
+            animNoti.SetBool("Hide", true);
+        }
+
         if (timeLeft < 0)
         {
             GameObject canvas = GameObject.Find("Canvas");
@@ -61,5 +86,6 @@ public class CellphoneController : MonoBehaviour
             anim.SetBool("FadeOutBool", true);
             SceneManager.LoadScene("BadEnding");
         }
+
     }
 }
