@@ -194,6 +194,10 @@ public class GameBedMorningController : MonoBehaviour
                 Sprite characterImage = Resources.Load<Sprite>("Characters/" + currentCharacter.Arquivo);
                 child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
+                if (currentCharacter.Raridade == "5")
+                {
+                    brasilChan = true;
+                }
                 checkCharacterList();
             }
         }
