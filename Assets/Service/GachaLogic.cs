@@ -1,6 +1,7 @@
 ﻿using Assets.Service;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -21,7 +22,6 @@ public class GachaLogic : MonoBehaviour
         { //2 estrelas
             character = gachaCharacter.getRandomCharacterByRarity("2");
         }
-        else if (roll <= 900)
         { //3 estrelas
             character = gachaCharacter.getRandomCharacterByRarity("3");
         }
