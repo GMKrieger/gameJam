@@ -1,15 +1,15 @@
-1;Filtro de Barro;descricao
-1;Prato de Vidro Marrom;descricao
-1;Vidro Vermelho de Banheiro de Vó;descricao
-1;Copo de Requeijão;descricao
-1;Térmica de Café;descricao
-1;Óculos Colorido chavoso;descricao
-1;Farofa Yoki;descricao
-1;Ímã de Geladeira disk Gás;descricao
-1;Coxinha;descricao
-1;Copo Americano;descricao
+1;Caipirinha;1Estrela/Caipirinha
+1;Feijoada;1Estrela/Feijoada
+1;Pastel;1Estrela/Pastel
+1;Catupiry;1Estrela/Catupiry
+1;Açaí;1Estrela/Acai
+1;Farofa;1Estrela/Farofa
+1;Picanha;1Estrela/Picanha
+1;Côco Verde;1Estrela/Coco
+1;Coxinha;1Estrela/Coxinha
+1;Brigadeiro;1Estrela/Brigadeiro
 2;Vira Lata Caramelo (♂);2Estrelas/ViraLataCaramelo
-2;Lobo guará (♀);2Estrelas/LogoGuara
+2;Lobo guará (♀);2Estrelas/LoboGuara
 2;Crocodilo Papo-Amarelo (♂);2Estrelas/JacareDePapoAmarelo
 2;Mico Leão Dourado;2Estrelas/MicoLeaoDourado
 2;Arara Azul;2Estrelas/AraraAzul
@@ -18,8 +18,8 @@
 3;Cataratas do Iguaçu;3Estrelas/CataratasDoIguacu
 3;Floresta amazônica;3Estrelas/FlorestaAmazonica
 3;Gruta da Lagoa Azul;3Estrelas/GrutaDaLagoaAzul
-4;Sudeste;descricao
-4;Norte;descricao
+4;Machado de Assis;4Estrelas/MachadoDeAssis
+4;Alberto Santos-Dumont;4Estrelas/SantosDumont
 4;Nordeste;descricao
 4;Centro-Oeste;descricao
 4;Sul;descricao
