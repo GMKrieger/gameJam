@@ -14,10 +14,10 @@
 2;Mico Leão Dourado;2Estrelas/MicoLeaoDourado
 2;Arara Azul;2Estrelas/AraraAzul
 2;Capivara;2Estrelas/Capivara
-3;Cristo Redentor;descricao
-3;Cataratas do Iguaçu;descricao
-3;Floresta amazônica;descricao
-3;Centro Histórico de Salvador;descricao
+3;Cristo Redentor;3Estrelas/CristoRedentor
+3;Cataratas do Iguaçu;3Estrelas/CataratasDoIguacu
+3;Floresta amazônica;3Estrelas/FlorestaAmazonica
+3;Gruta da Lagoa Azul;3Estrelas/GrutaDaLagoaAzul
 4;Sudeste;descricao
 4;Norte;descricao
 4;Nordeste;descricao
