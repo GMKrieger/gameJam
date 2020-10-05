@@ -1,4 +1,6 @@
 ﻿using Assets.Service;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -11,6 +13,7 @@ public class GameController : MonoBehaviour
     private Image ticket;
     private Color a255 = new Color();
     private Color a0 = new Color();
+    private Stack<Character> listaPersonagens = new Stack<Character>();
     // Called when animation ends, loads gacha interface
     public void startGacha() {
 
@@ -59,6 +62,8 @@ public class GameController : MonoBehaviour
             Sprite characterImage = Resources.Load<Sprite>("Characters/" + character.Arquivo);
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
             characterContainer.transform.GetChild(0).gameObject.GetComponent<Image>().color = a255;
+            handleUI(false);
+            GameObject.Find("GachaUI").transform.Find("Return").gameObject.SetActive(true);
         }
     }
 
@@ -82,14 +87,17 @@ public class GameController : MonoBehaviour
             GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
             cleanScreen();
             GachaLogic Logic = gameObject.AddComponent<GachaLogic>();
+            listaPersonagens = Logic.GetMultipleCharacters(10);
             foreach (Transform child in characterContainerGroup.transform)
             {
-                Character character = Logic.GetSingleCharacter();
-                child.GetChild(1).gameObject.GetComponent<Text>().text = character.Nome;
-                Sprite characterImage = Resources.Load<Sprite>("Characters/" + character.Arquivo);
+                Character currentCharacter = listaPersonagens.Pop();
+                child.GetChild(1).gameObject.GetComponent<Text>().text = currentCharacter.Nome;
+                Sprite characterImage = Resources.Load<Sprite>("Characters/" + currentCharacter.Arquivo);
                 child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
                 child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
             }
+            handleUI(false);
+            GameObject.Find("GachaUI").transform.Find("Next").gameObject.SetActive(true);
         }
     }
     public void setColorVariables()
@@ -124,9 +132,65 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("Cellphone");
     }
 
+    public void loadMoreGachaCharacters()
+    {
+        checkCharacterList();
+        GameObject characterContainerGroup = GameObject.Find("CharacterContainerGroup");
+        cleanScreen();
+        foreach (Transform child in characterContainerGroup.transform)
+        {
+            Character currentCharacter = listaPersonagens.Pop();
+            child.GetChild(1).gameObject.GetComponent<Text>().text = currentCharacter.Nome;
+            Sprite characterImage = Resources.Load<Sprite>("Characters/" + currentCharacter.Arquivo);
+            child.GetChild(0).gameObject.GetComponent<Image>().sprite = characterImage;
+            child.GetChild(0).gameObject.GetComponent<Image>().color = a255;
+            checkCharacterList();
+        }
+    }
+
+    private void checkCharacterList()
+    {
+        if (listaPersonagens.Count == 0)
+        {
+            GameObject gachaUI = GameObject.Find("GachaUI");
+            gachaUI.transform.Find("Next").gameObject.SetActive(false);
+            gachaUI.transform.Find("Return").gameObject.SetActive(true);
+            return;
+        }
+    }
+    public void handleUI(bool visibility)
+    {
+        GameObject UI = GameObject.Find("UI");
+        for (int i = 0; i < UI.transform.childCount; i++)
+        {
+            GameObject child = UI.transform.GetChild(i).gameObject;
+            if (child != null)
+                child.SetActive(visibility);
+        }
+    }
+
+    public void handleGachaUI(bool visibility)
+    {
+        GameObject gachaUI = GameObject.Find("GachaUI");
+        for (int i = 0; i < gachaUI.transform.childCount; i++)
+        {
+            GameObject child = gachaUI.transform.GetChild(i).gameObject;
+            if (child != null)
+                child.SetActive(visibility);
+        }
+    }
+
+    public void resetScreen()
+    {
+        cleanScreen();
+        handleUI(true);
+        handleGachaUI(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        handleGachaUI(false);
         GameObject purchaseScreen = GameObject.Find("PurchaseScreen");
         purchaseScreen.GetComponent<Image>().enabled = false;
     }
